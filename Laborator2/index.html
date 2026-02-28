@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Info Hub</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body style="background-image: url('assets/img/img1.jpg');">
+  <a class="skip" href="#main">Sari la conținut</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span>
+        <div>
+          Campus Info Hub
+          <small>Resurse utile, rapid și clar</small>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navigație">
+        <a data-page="index.html" href="index.html">Home</a>
+        <a data-page="library.html" href="pages/library.html">Biblioteca</a>
+        <a data-page="cafeteria.html" href="pages/cafeteria.html">Cantina</a>
+        <a data-page="events.html" href="pages/events.html">Evenimente</a>
+        <a href="https://www.w3schools.com/js/" target="_blank" rel="noreferrer">JS Docs</a>
+
+        <button class="btn" id="theme" type="button" title="Schimbă tema">🌓 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h1>Găsește rapid ce ai nevoie în campus.</h1>
+          <p class="subtitle">
+            Datele sunt încărcate din <span class="pill">/data/resources.json</span> și afișate dinamic (fetch).
+          </p>
+
+          <div class="controls" aria-label="Filtrare resurse">
+            <div class="input" title="Shortcut: Ctrl+K">
+              🔎 <input id="q" type="search" placeholder="Caută după nume, tag, locație… (Ctrl+K)" />
+              <kbd>Ctrl</kbd><kbd>K</kbd>
+            </div>
+
+            <div class="select">
+              🧩
+              <label for="type" class="skip">Tip</label>
+              <select id="type">
+                <option value="all">Toate tipurile</option>
+                <option value="Biblioteca">Biblioteca</option>
+                <option value="Spațiu de studiu">Spațiu de studiu</option>
+                <option value="Cantină">Cantină</option>
+                <option value="Cafenea">Cafenea</option>
+                <option value="Eveniment">Eveniment</option>
+              </select>
+            </div>
+
+            <button class="btn" id="favOnly" type="button" aria-pressed="false">⭐ Favorite</button>
+            <button class="btn" id="jumpTags" type="button">🏷️ Jump to tags</button>
+            <button class="btn" id="clear" type="button">🧼 Reset</button>
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span class="pill" id="status">Se încarcă datele…</span>
+            <span class="pill">Endpoint: <code>/data/resources.json</code></span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2 style="margin:0 0 8px; font-size:18px;">Rezultate rapide (studiu)</h2>
+          <p class="subtitle" style="margin-bottom:10px;">
+            Filtru demo: locuri destinate studiului (tag <span class="pill">studiu</span>).
+          </p>
+          <div id="studyOnly" style="display:flex; flex-direction:column; gap:8px;"></div>
+
+          <hr class="sep" />
+
+          <a class="anchor" href="pages/library.html#schedule">
+            ⤵️ Fragment link: <strong>/pages/library.html#schedule</strong>
+          </a>
+
+          <div style="margin-top:10px" class="callout">
+            Tip: rulează cu Live Server ca să meargă <strong>fetch()</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="resourcesTitle">
+      <div class="section-head">
+        <div>
+          <h2 id="resourcesTitle">Resurse din campus</h2>
+          <p class="subtitle">Click pe o resursă ca să vezi detalii (modal). ⭐ salvează favorite.</p>
+        </div>
+        <div class="pill" id="count">0 rezultate</div>
+      </div>
+
+      <div id="grid" class="grid" role="list"></div>
+      <div id="skeleton" class="grid skeleton" aria-hidden="true" style="display:none;"></div>
+    </section>
+
+    <section class="section" id="tagsSection" aria-labelledby="tagsTitle">
+      <div class="section-head">
+        <div>
+          <h2 id="tagsTitle">Tags / categorii</h2>
+          <p class="subtitle">Click pe un tag ca să filtrezi; click din nou ca să-l oprești.</p>
+        </div>
+        <div class="pill">Interactiv</div>
+      </div>
+
+      <div id="tags" class="tags"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="row">
+        <div class="note">
+          Relative URL: <code>pages/library.html</code> • JSON: <code>data/resources.json</code>
+        </div>
+        <div class="note">© 2026 Campus Info Hub</div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Închide">✕</button>
+
+      <div class="modal-head">
+        <div class="pill" id="modalType"></div>
+        <h2 id="modalTitle" style="margin:8px 0 0;"></h2>
+        <div class="modal-meta" id="modalMeta"></div>
+      </div>
+
+      <div class="modal-body">
+        <p id="modalDesc" class="subtitle" style="margin-top:0;"></p>
+
+        <h3 style="margin:14px 0 8px;">Program</h3>
+        <div id="modalSchedule" class="schedule"></div>
+
+        <h3 style="margin:14px 0 8px;">Tags</h3>
+        <div id="modalTags" class="tags"></div>
+
+        <div id="modalLinks" style="margin-top:14px;"></div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="modalFav" type="button">⭐ Adaugă la favorite</button>
+        <a class="btn" id="modalGo" href="#" title="Deschide pagina resursei">Deschide pagina</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evenimente • Campus Info Hub</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body style="background-image: url('../assets/img/img4.jpg');">
+  <a class="skip" href="#main">Sari la conținut</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo" aria-hidden="true"></span>
+        <div>
+          Campus Info Hub
+          <small>Evenimente</small>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navigație">
+        <a data-page="index.html" href="../index.html">Home</a>
+        <a data-page="library.html" href="library.html">Biblioteca</a>
+        <a data-page="cafeteria.html" href="cafeteria.html">Cantina</a>
+        <a data-page="events.html" href="events.html">Evenimente</a>
+
+        <a href="https://docs.github.com/en/get-started" target="_blank" rel="noreferrer">GitHub Docs</a>
+
+        <button class="btn" id="theme" type="button">🌓 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1 class="page-title">Evenimente</h1>
+    <p class="lead">
+      Pagină de resursă (static). Pe Home poți filtra resursele după tag-ul <strong>evenimente</strong>.
+    </p>
+
+    <div class="two-col">
+      <section class="panel">
+        <h3>Exemple (mock)</h3>
+        <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
+          <article class="card">
+            <h3>Workshop CV</h3>
+            <div class="meta">
+              <span class="badge">📍 Sala Bosh</span>
+              <span class="badge">⏰ 12:00</span>
+            </div>
+            <div class="details">Adu CV-ul și primești feedback pe loc.</div>
+            <div class="tags">
+              <span class="pill">#carieră</span>
+              <span class="pill">#workshop</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Meet &amp; Greet</h3>
+            <div class="meta">
+              <span class="badge">📍 Aula mică</span>
+              <span class="badge">⏰ 16:00</span>
+            </div>
+            <div class="details">Networking cu invitați și companii.</div>
+            <div class="tags">
+              <span class="pill">#networking</span>
+              <span class="pill">#evenimente</span>
+            </div>
+          </article>
+        </div>
+
+        <hr class="sep" />
+        <div class="callout">
+          Home este pagina dinamică: fetch + listă + filtrare + tags + modal + favorite.
+        </div>
+      </section>
+
+      <aside class="panel">
+        <h3>Navigare rapidă</h3>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a class="anchor" href="../index.html">🏠 Home (dinamic)</a>
+          <a class="anchor" href="library.html">📚 Biblioteca</a>
+          <a class="anchor" href="cafeteria.html">🍲 Cantina</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <div class="row">
+        <div class="note">URI: <code>/pages/events.html</code></div>
+        <div class="note">© 2026 Campus Info Hub</div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

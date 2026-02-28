@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cantina • Campus Info Hub</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body style="background-image: url('../assets/img/img3.jpg');">
+  <a class="skip" href="#main">Sari la conținut</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo" aria-hidden="true"></span>
+        <div>
+          Campus Info Hub
+          <small>Cantina</small>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navigație">
+        <a data-page="index.html" href="../index.html">Home</a>
+        <a data-page="library.html" href="library.html">Biblioteca</a>
+        <a data-page="cafeteria.html" href="cafeteria.html">Cantina</a>
+        <a data-page="events.html" href="events.html">Evenimente</a>
+
+        <a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer">HTML Docs</a>
+
+        <button class="btn" id="theme" type="button">🌓 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1 class="page-title">Cantina</h1>
+    <p class="lead">Pagină de resursă (static).</p>
+
+    <div class="two-col">
+      <section class="panel">
+        <h3>Highlights</h3>
+        <ul class="lead" style="margin:0; padding-left:18px;">
+          <li>Meniu zilnic + opțiuni vegetariene</li>
+          <li>Plată cash / card</li>
+          <li>Servire rapidă între cursuri</li>
+        </ul>
+
+        <hr class="sep" />
+
+        <h3>Program orientativ</h3>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <span class="pill">Mon–Fri: 11:00–16:00</span>
+          <span class="pill">Sat: 12:00–15:00</span>
+          <span class="pill">Sun: Închis</span>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <h3>Shortcut-uri</h3>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a class="anchor" href="../index.html">🏠 Înapoi la Home</a>
+          <a class="anchor" href="library.html#schedule">📚 Program bibliotecă (fragment link)</a>
+          <a class="anchor" href="events.html">📅 Evenimente</a>
+        </div>
+
+        <hr class="sep" />
+
+        <div class="callout">
+          În Home poți filtra după tip: <strong>Cantină</strong> sau tag: <strong>mâncare</strong>.
+        </div>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <div class="row">
+        <div class="note">URI: <code>/pages/cafeteria.html</code></div>
+        <div class="note">© 2026 Campus Info Hub</div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

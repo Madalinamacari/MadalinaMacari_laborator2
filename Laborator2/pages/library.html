@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca • Campus Info Hub</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body style="background-image: url('../assets/img/img2.jpg');">
+  <a class="skip" href="#main">Sari la conținut</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo" aria-hidden="true"></span>
+        <div>
+          Campus Info Hub
+          <small>Biblioteca</small>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navigație">
+        <a data-page="index.html" href="../index.html">Home</a>
+        <a data-page="library.html" href="library.html">Biblioteca</a>
+        <a data-page="cafeteria.html" href="cafeteria.html">Cantina</a>
+        <a data-page="events.html" href="events.html">Evenimente</a>
+        <a href="https://javascript.info/fetch" target="_blank" rel="noreferrer">Fetch Guide</a>
+
+        <button class="btn" id="theme" type="button">🌓 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1 class="page-title">Biblioteca</h1>
+    <p class="lead">Pagină “resource” + fragment link către program.</p>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+      <a class="anchor" href="#schedule">⤵️ Jump to schedule</a>
+      <a class="anchor" href="../index.html">← Înapoi la Home</a>
+    </div>
+
+    <div class="two-col">
+      <section class="panel">
+        <h3>Ce găsești aici</h3>
+        <ul class="lead" style="margin:0; padding-left:18px;">
+          <li>Săli de lectură (liniște + prize)</li>
+          <li>Zone de lucru în echipă</li>
+          <li>Imprimare / scanare</li>
+          <li>Acces resurse digitale</li>
+        </ul>
+
+        <hr class="sep" />
+        <div class="callout">
+          Filtrează pe Home după tag-ul <strong>studiu</strong>.
+        </div>
+      </section>
+
+      <aside class="panel">
+        <h3>Links rapide</h3>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a class="anchor" href="../index.html#tagsSection">🏷️ Vezi tags pe Home</a>
+          <a class="anchor" href="cafeteria.html">🍲 Cantina</a>
+          <a class="anchor" href="events.html">📅 Evenimente</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="panel" id="schedule" style="margin-top:12px;">
+      <h3>Program (Schedule)</h3>
+      <p class="lead" style="margin:0 0 10px;">
+        Ținta fragmentului: <code>/pages/library.html#schedule</code>.
+      </p>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <span class="pill">Mon–Fri: 08:00–22:00</span>
+        <span class="pill">Sat: 10:00–18:00</span>
+        <span class="pill">Sun: Închis</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="row">
+        <div class="note">URI: <code>/pages/library.html#schedule</code></div>
+        <div class="note"><a href="../index.html">Home</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
